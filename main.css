@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #475569;
+    position: fixed;
+    width: 100%;
+}
+
+main {
+    padding-top: 121px;
+}
+
+.container {
+    max-width: 1080px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.primary-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.primary-nav-list {
+    background-color: #1f2937;
+    z-index: 9998;
+    position: fixed;
+    display: flex;
+    gap: 1.3em;
+    inset: 0 0 0 30%;
+    padding: 10em 2em;
+    justify-content: start;
+    flex-direction: column;
+    list-style: none;
+
+    transform: translateX(100%);
+    transition: transform 200ms ease-in-out;
+}
+
+.primary-nav-list[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.primary-nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.hamburger {
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    background-color: #3b82f6;
+    padding: 1rem;
+    border: none;
+    border-radius: 0 1rem 0 1rem;
+}
+
+.hamburger span {
+    background-color: #fff;
+    width: 28px;
+    height: 3px;
+    transform-origin: left;
+    transition: all .3s ease-in-out;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, -3px);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, 3px);
+}
+
+/* This would ideally be switched to max-width as it would create less complexity, but not going to bother with that right now. */
+@media only screen and (min-width: 680px)  {
+    .primary-nav-list {
+        position: relative;
+        flex-direction: row;
+        background-color: transparent;
+        inset: 0 0 0 0;
+        padding: 0;
+        transform: none;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
