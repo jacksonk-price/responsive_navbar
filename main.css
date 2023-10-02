@@ -69,7 +69,7 @@ main {
     background-color: #3b82f6;
     padding: 1rem;
     border: none;
-    border-radius: 0 1rem 0 1rem;
+    border-radius: 1rem  0 1rem;
 }
 
 .hamburger span {
@@ -78,6 +78,14 @@ main {
     height: 3px;
     transform-origin: left;
     transition: all .3s ease-in-out;
+}
+
+.hamburger[aria-expanded="false"] span:nth-child(1) {
+    width: 20px;
+}
+
+.hamburger[aria-expanded="false"] span:nth-child(3) {
+    width: 20px;
 }
 
 .hamburger[aria-expanded="true"] span:nth-child(1) {
