@@ -64,10 +64,9 @@ main {
     z-index: 9999;
     display: flex;
     flex-direction: column;
+    background-color: transparent;
     gap: 8px;
     cursor: pointer;
-    background-color: #3b82f6;
-    padding: 1rem;
     border: none;
     border-radius: 1rem 0.5rem 1rem 0.5rem;
 }
@@ -100,8 +99,42 @@ main {
     transform: rotate(-45deg) translate(4px, 3px);
 }
 
-/* This would ideally be switched to max-width as it would create less complexity, but not going to bother with that right now. */
-@media only screen and (min-width: 680px)  {
+.dropdown-main-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ffffff;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #1f2937;
+    list-style: none;
+    border-bottom: 1px #ffffff solid;
+}
+
+.dropdown-main-item img {
+    max-width: 20px;
+}
+
+.dropdown-item a {
+    display: block;
+    color: #ffffff;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 730px) {
+    .dropdown-active .dropdown-menu {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 730px)  {
     .primary-nav-list {
         position: relative;
         flex-direction: row;
@@ -113,5 +146,49 @@ main {
 
     .hamburger {
         display: none;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+    
+    .dropdown-menu {
+        background-color: #ffffff;
+        position: absolute;
+        top: 100%;
+        height: auto;
+        min-width: 18rem; 
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    
+    .dropdown-toggle:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+
+    .dropdown-menu li {
+        text-align: left;
+        opacity: 0;
+        transform: translateY(-0.625rem);
+        transition: opacity 0.6s, transform 0.6s, background-color 0.3s;
+    }
+    
+    .dropdown-toggle:hover li {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    
+    .dropdown-item:hover {
+        background-color: #f7f7f7;
+    }
+
+    .dropdown-item a {
+        display: block;
+        color: black;
+        padding: 0.7rem;
+        font-size: 0.9rem;
+        font-weight: 400;
     }
 }

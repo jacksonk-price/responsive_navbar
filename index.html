@@ -8,14 +8,23 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container nav-container">
             <nav class="primary-navigation">
                 <a href="#">
                     <img src="img/logoipsum-288.svg" alt="">
                 </a>
                 <ul id="primary-navigation-list" class="primary-nav-list" data-visible="false">
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Pricing</a></li>
+                    <li class="dropdown dropdown-toggle">
+                        <span class="dropdown-main-item">Products <img src="img/caret-down.svg" alt="dropdown caret icon" aria-hidden="true"></span>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item"><a href="#">A product</a></li>
+                            <li class="dropdown-item"><a href="#">Another product</a></li>
+                            <li class="dropdown-item"><a href="#">More product</a></li>
+                            <li class="dropdown-item"><a href="#">Maybe a service</a></li>
+                            <li class="dropdown-item"><a href="#">Maybe another service</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Our Work</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
