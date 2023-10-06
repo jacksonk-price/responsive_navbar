@@ -111,9 +111,8 @@ main {
 
 .dropdown-menu {
     display: none;
-    background-color: #1f2937;
+    background-color: #475569;
     list-style: none;
-    border-bottom: 1px #ffffff solid;
 }
 
 .dropdown-main-item img {
